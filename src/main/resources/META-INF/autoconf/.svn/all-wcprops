@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/autoconf
+END
+config.properties.vm
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/autoconf/config.properties.vm
+END
+auto-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/autoconf/auto-config.xml
+END
+tracelog-log4j.xml.vm
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/autoconf/tracelog-log4j.xml.vm
+END

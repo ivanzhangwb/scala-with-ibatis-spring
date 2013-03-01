@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/spring
+END
+tracelog-dao.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/spring/tracelog-dao.xml
+END
+tracelog-dataSource.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/repos/ali_platform/!svn/ver/189569/babylon/sandbox/incubator/tracelog/trunk/src/main/resources/META-INF/spring/tracelog-dataSource.xml
+END

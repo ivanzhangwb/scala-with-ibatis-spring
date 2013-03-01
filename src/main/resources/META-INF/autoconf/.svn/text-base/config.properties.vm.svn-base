@@ -1,0 +1,8 @@
+
+## redis
+bbl.cache.servers = ${bbl_cache_servers}
+
+## database
+olps.jdbc.url=$!{bbl_olps_database_server_url}
+olps.jdbc.username=$!{bbl_olps_database_server_username}
+olps.jdbc.password= $!{bbl_olps_database_server_password}
