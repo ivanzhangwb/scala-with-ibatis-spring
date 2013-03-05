@@ -1,22 +1,39 @@
 package org.github.ivanzhangwb.dal
 
+import org.github.ivanzhangwb.dal.dataobject.TraceEntitry
 import org.springframework.context.ApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext
-import java.util.logging.Logger
 import org.github.ivanzhangwb.dal.dataobject.TraceEntitry
 
-object main extends App {
+object testmain extends App {
 
-  // start service
-  var entitylist=new java.util.ArrayList[TraceEntitry]
-  entitylist.add(new TraceEntitry("ivanzhan","213","131","2013-03-01 00:59:17"))
-  
+  var resultlist = new java.util.ArrayList[TraceEntitry]
+  // 修改类的定义，生成get / set方法
+  var entirry = new TraceEntitry()
+  entirry.uid = "ivanzhang"
+  entirry.ip = "127.0.0.1"
+  entirry.accessMode = "2013-03-05 10:11:00"
+  entirry.accessTime = "2013-03-05 10:11:00"
+  resultlist.add(entirry)
+
   try {
     val xml = "classpath:applicationContext.xml"
     val appContext: ApplicationContext = new ClassPathXmlApplicationContext(xml)
-    appContext.getBean("traceLogDao").asInstanceOf[TraceLogDao].batchInsert(entitylist)
+    var target = appContext.getBean("traceLogDao")
+
+    // 使用模式匹配优于 asInstanceOf.
+    target match {
+      case c: TraceLogDao => c.batchInsert(resultlist)
+      case _ =>
+    }
+
+    var list: java.util.List[TraceEntitry] = target.asInstanceOf[TraceLogDao].query
+
+    for (t <- list.toArray()) {
+      println(t.toString())
+    }
   } catch {
     case e: Exception => println(e.getMessage, e)
   }
-  
+
 }

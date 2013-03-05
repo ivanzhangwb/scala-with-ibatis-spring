@@ -4,6 +4,7 @@ import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport
 import com.ibatis.sqlmap.client.SqlMapClient
 import java.sql.SQLException
 import org.github.ivanzhangwb.dal.dataobject.TraceEntitry
+import org.github.ivanzhangwb.dal.dataobject.TraceEntitry
 
 class TraceLogDao extends SqlMapClientDaoSupport {
 
@@ -16,5 +17,9 @@ class TraceLogDao extends SqlMapClientDaoSupport {
       client.insert("tracelog.insert", e)
     }
     client.executeBatch();
+  }
+
+  def query(): java.util.List[TraceEntitry] = {
+    getSqlMapClientTemplate().getSqlMapClient().queryForList("tracelog.query").asInstanceOf[java.util.List[TraceEntitry]]
   }
 }

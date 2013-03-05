@@ -3,12 +3,24 @@
 "http://www.ibatis.com/dtd/sql-map-2.dtd">
 
 <sqlMap namespace="tracelog">
-	
-	<typeAlias type="org.github.ivanzhangwb.dal.dataobject.TraceEntitry" alias="traceEntry" />
-	
+	<typeAlias type="org.github.ivanzhangwb.dal.dataobject.TraceEntitry"
+		alias="traceEntry" />
+
+	<resultMap class="traceEntry" id="traceMap">
+		<result property="uid" 			column="user_id" 	 jdbcType="VARCHAR" />
+		<result property="ip" 			column="ip" 		 jdbcType="VARCHAR" />
+		<result property="accessMode" 	column="access_mode" jdbcType="VARCHAR" />
+		<result property="accessTime" 	column="access_time" jdbcType="DATETIME" />
+	</resultMap>
+
 	<insert id="insert" parameterClass="traceEntry">
-		insert into trace_log (user_id,ip,access_mode,access_time,gmt_create,gmt_modified)
-	   		values(#uid#, #ip#, #accessMode#, #accessTime#, now(), now())
-    </insert>
-    
+		insert into trace_log
+		(user_id,ip,access_mode,access_time,gmt_create,gmt_modified)
+		values(#uid#, #ip#, #accessMode#, #accessTime#, now(), now())
+	</insert>
+
+	<select id="query" resultMap="traceMap">
+		select user_id,ip,access_mode,access_time,gmt_create,gmt_modified from
+		trace_log
+	</select>
 </sqlMap>
